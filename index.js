@@ -12,6 +12,11 @@ formEl.addEventListener("submit", async (event) => {
   console.log(color, mode);
 
   const schemes = await fetchSchemes(color.substring(1), mode);
+
+  colorsEl.innerHTML = schemes.colors.reduce(
+    (acc, current) => acc + `<li>${current.hex.value}</li>`,
+    ""
+  );
 });
 
 function fetchSchemes(color, mode) {
