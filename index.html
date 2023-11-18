@@ -5,9 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Hello World</title>
+    <script src="./index.js" defer></script>
+    <title>Color scheme generator</title>
   </head>
   <body>
-    <h1>Hello, World!</h1>
+    <header>
+      <h1>Color scheme generator</h1>
+    </header>
+    <main>
+      <form>
+        <input type="color" name="color" />
+        <select name="mode">
+          <option value="monochrome">Monochrome</option>
+          <option value="monochrome-dark">Monochrome Dark</option>
+          <option value="monochrome-light">Monochrome Light</option>
+          <option value="analogic">Analogic</option>
+          <option value="complement">Complement</option>
+          <option value="analogic-complement">Analogic Complement</option>
+          <option value="triad">Triad</option>
+          <option value="quad">Quad</option>
+        </select>
+        <button type="submit">Get color scheme</button>
+      </form>
+      <ul id="colors"></ul>
+    </main>
   </body>
 </html>
