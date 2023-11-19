@@ -9,21 +9,24 @@ formEl.addEventListener("submit", async (event) => {
   const color = formData.get("color");
   const mode = formData.get("mode");
 
-  console.log(color, mode);
-
   const schemes = await fetchSchemes(color.substring(1), mode);
 
-  colorsEl.innerHTML = schemes.colors.reduce(
-    (acc, current) =>
+  colorsEl.innerHTML = schemes.colors.reduce((acc, current) => {
+    const hexValue = current.hex.value;
+    return (
       acc +
       `
       <li>
-        <div style="background-color: ${current.hex.value}"></div>
-        <p>${current.hex.value}</p>
-      </li>`,
-    ""
-  );
+        <div style="background-color: ${hexValue}" data-color="${hexValue}"></div>
+        <p data-color="${hexValue}">${hexValue}</p>
+      </li>`
+    );
+  }, "");
 });
+
+colorsEl.addEventListener("click", (event) =>
+  navigator.clipboard.writeText(event.target.dataset.color)
+);
 
 function fetchSchemes(color, mode) {
   return fetch(

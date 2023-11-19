@@ -120,6 +120,11 @@ ul {
   justify-content: center;
 }
 
+li > div,
+li > p {
+  cursor: pointer;
+}
+
 li > div {
   width: 80px;
   height: 500px;
