@@ -14,7 +14,13 @@ formEl.addEventListener("submit", async (event) => {
   const schemes = await fetchSchemes(color.substring(1), mode);
 
   colorsEl.innerHTML = schemes.colors.reduce(
-    (acc, current) => acc + `<li>${current.hex.value}</li>`,
+    (acc, current) =>
+      acc +
+      `
+      <li>
+        <div style="background-color: ${current.hex.value}"></div>
+        <p>${current.hex.value}</p>
+      </li>`,
     ""
   );
 });

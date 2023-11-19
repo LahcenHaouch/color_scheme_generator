@@ -78,3 +78,54 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+/* custom */
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 48px;
+}
+
+form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+input[type="color"] {
+  height: 50px;
+  width: 70px;
+  border: none;
+}
+
+select,
+button {
+  padding: 12px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+}
+
+button {
+  cursor: pointer;
+  background-color: white;
+  color: #374151;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+li > div {
+  width: 80px;
+  height: 500px;
+  margin-bottom: 12px;
+}
+
+li > p {
+  text-align: center;
+}
